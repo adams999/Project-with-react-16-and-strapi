@@ -32,11 +32,10 @@ export async function getHomePage() {
   return response?.data;
 }
 
-export async function getStrapiData(endpoint: string) {    
+export async function getStrapiData(endpoint: string) {
+  const url = `${STRAPI_BASE_URL}/api/${endpoint}`;    
   try {
-    const res = await fetch(`${STRAPI_BASE_URL}/api/${endpoint}`, {
-      next: { revalidate: 10 },
-    });
+    const res = await fetch(url);
 
     if (!res.ok) {
       throw new Error("Failed to fetch data from Strapi" + res.status);

@@ -15,8 +15,6 @@ export default async function Home() {
   const [heroSection] = strapiData?.sections || [];
   console.log(strapiData);
   
-
-  const { title, description } = strapiData;
   return (
     <main className="container mx-auto py-6">
       <HeroSection data={heroSection} />
