@@ -5,7 +5,8 @@
       "Bash(npm:*)",
       "Bash(node --version:*)",
       "Bash(pnpm --version:*)",
-      "Bash(npx create-next-app@latest)"
+      "Bash(npx create-next-app@latest)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []
