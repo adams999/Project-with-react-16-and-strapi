@@ -42,7 +42,7 @@ export async function proxy(request: NextRequest) {
 
     return NextResponse.next();
   } catch (error) {
-    console.log("Authentication check failed:", error);
+    //console.log("Authentication check failed:", error);
     return NextResponse.redirect(new URL("/signin", request.url));
   }
 }

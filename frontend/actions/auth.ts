@@ -1,7 +1,7 @@
 "use server";
 
 import { cookies } from "next/headers";
-import {redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import { registerUserService } from "@/lib/strapi";
 import { SignupFormSchema, type FormState } from "@/validations/auth";
 
@@ -9,7 +9,7 @@ const cookieConfig = {
   maxAge: 60 * 60 * 24 * 7, // 1 week
   path: "/",
   httpOnly: true,
-  domain: process.env.HOST ?? 'localhost',
+  domain: process.env.HOST ?? "localhost",
   secure: process.env.NODE_ENV === "production",
 };
 
@@ -17,7 +17,7 @@ export async function registerUserAction(
   prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  console.log("Register User Action Invoked");
+  //console.log("Register User Action Invoked");
 
   const fields = {
     username: formData.get("username") as string,
@@ -38,7 +38,6 @@ export async function registerUserAction(
 
   const response = await registerUserService(validatedFields.data);
   if (!response || response.error) {
-
     return {
       success: false,
       message: "Registration errors occurred",
@@ -48,7 +47,7 @@ export async function registerUserAction(
     };
   }
 
-const cookieStore = await cookies();
-cookieStore.set("jwt", response.jwt, cookieConfig);
-redirect("/dashboard");
+  const cookieStore = await cookies();
+  cookieStore.set("jwt", response.jwt, cookieConfig);
+  redirect("/dashboard");
 }
