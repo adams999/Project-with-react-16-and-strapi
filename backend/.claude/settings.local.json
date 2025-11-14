@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version:*)",
+      "Bash(if [ -d \"node_modules\" ])",
+      "Bash(then rm -rf node_modules)",
+      "Bash(fi)",
+      "Bash(if [ -f \"package-lock.json\" ])",
+      "Bash(then rm package-lock.json)",
+      "Bash(npm install)",
+      "Bash(npm run develop:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpx create-next-app@latest:*)",
+      "Bash(npm:*)",
+      "Bash(node --version:*)",
+      "Bash(pnpm --version:*)",
+      "Bash(npx create-next-app@latest)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
